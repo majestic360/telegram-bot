@@ -201,6 +201,9 @@ bot.onText(/\/Referrals/, (msg) => {
     );
 });
 
+
+
+
 bot.onText(/\/Vote/, (msg) => {
 	
 	const chatId = msg.chat.id;
