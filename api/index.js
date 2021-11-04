@@ -77,11 +77,13 @@ bot.onText(/\/menu/, (msg) => {
 bot.onText(/\/Deposit/, (msg,match) => {
 	
 	const chatId = msg.chat.id;
+	const username = msg.chat.username;
+	
 	
 	bot.sendMessage(
         chatId,
         `
-			Weldone name,
+			Weldone ${username},
 			
 			Send the coin you want to invest to the wallet below, balance would be updated automatically once the blockchain has confirm transaction,
 			
@@ -148,12 +150,16 @@ bot.onText(/\/Profile/, (msg) => {
 	
 	const chatId = msg.chat.id;
 	
+	let date_ob = new Date();
+	let date = ("0" + date_ob.getDate()).slice(-2);
+	
+	
     bot.sendMessage(
         chatId,
         `
 			Hello name
 			
-			You joined the investment on date
+			You joined the investment on ${date}
 			
 			Your present rank is novice (one star)
 			
@@ -173,11 +179,12 @@ bot.onText(/\/Profile/, (msg) => {
 bot.onText(/\/Referrals/, (msg) => {
 	
 	const chatId = msg.chat.id;
+	const username = msg.chat.username;
 	
     bot.sendMessage(
         chatId,
         `
-			Hello name
+			Hello ${username}
 			
 			You have referred a total of 5 people
 			
